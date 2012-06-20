@@ -107,22 +107,35 @@ body {
 /* Links
    ========================================================================== */
 
-/*
- * Addresses outline displayed oddly in Chrome
- */
-
-a:focus {
-    outline: thin dotted;
+a:link, a:visited {
+	color: #000;
+	background-color: transparent;
+	text-decoration: none;
+	font-weight: bold;
 }
 
 /*
- * Improves readability when focused and also mouse hovered in all browsers
- * people.opera.com/patrickl/experiments/keyboard/test
+ * 1. Addresses outline displayed oddly in Chrome
+ */
+
+a:focus {
+	background-color: #000;
+	color: #fff;
+	text-decoration: none;
+    outline: thin dotted /* 1. */;
+}
+
+/*
+ * 1. Improves readability when focused and also mouse hovered in all browsers
+ *    people.opera.com/patrickl/experiments/keyboard/test
  */
 
 a:hover,
 a:active {
-    outline: 0;
+    outline: 0 /* 1 */;
+	color: #7e7e7e;
+	background-color: transparent;
+	text-decoration: underline;
 }
 
 
