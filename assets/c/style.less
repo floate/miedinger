@@ -535,11 +535,14 @@ body {
 
 .head {
 	/* see clearfix */
+	#rems > .padding-top(55);
+	
 	border-bottom: 1px solid #a6a5a5;
 	padding-bottom: 10px;
 }
 
 	.head-in {
+		#rems > .margin-top(55);
 		display: block;
 		width: 100%;
 		border-top: 1px solid #a6a5a5;
@@ -617,6 +620,18 @@ body {
 .brand > a:visited {
 	/* :link & :visited for specificity */
 	color: #4d4d4d;
+	background-color: transparent;
+	text-decoration: none;
+}
+
+.brand > a:focus {
+	background-color: #7e7e7e;
+	color: #fff;
+}
+
+.brand > a:hover,
+.brand > a:active {
+	color: #7e7e7e;
 	background-color: transparent;
 	text-decoration: none;
 }
