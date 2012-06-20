@@ -652,6 +652,8 @@ a:active .ico-pi {
    $Helper classes
    ========================================================================== */
 /* $clearfix */
+.cf,
+.clearfix,
 body,
 .head,
 .container,
@@ -659,6 +661,8 @@ body,
 .fork {
   zoom: 1;
 }
+.cf:after,
+.clearfix:after,
 body:after,
 .head:after,
 .container:after,
@@ -670,4 +674,10 @@ body:after,
   height: 0;
   clear: both;
   content: ".";
+}
+.alignleft {
+  float: left;
+}
+.alignright {
+  float: left;
 }
