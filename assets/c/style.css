@@ -522,6 +522,22 @@ body {
   height: 300px;
 }
 /*! ==========================================================================
+   $Abstraction
+   ========================================================================== */
+/*
+.fork {
+	//see clearfix
+}
+*/
+.fork-left {
+  float: left;
+  padding-right: 1em;
+}
+.fork-right {
+  float: right;
+  padding-left: 1em;
+}
+/*! ==========================================================================
    $Modules
    ========================================================================== */
 /* $brand */
@@ -601,13 +617,15 @@ a:active .ico-pi {
 body,
 .head,
 .container,
-.foot {
+.foot,
+.fork {
   zoom: 1;
 }
 body:after,
 .head:after,
 .container:after,
-.foot:after {
+.foot:after,
+.fork:after {
   display: block;
   visibility: hidden;
   font-size: 0;
