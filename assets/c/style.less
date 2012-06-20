@@ -1,5 +1,4 @@
 @import "incl/constants.less";
-@import "incl/grid.less";
 @import "incl/mixins.less";
 
 /*! ==========================================================================
@@ -507,4 +506,74 @@ textarea {
 table {
     border-collapse: collapse;
     border-spacing: 0;
+}
+
+
+/*! ==========================================================================
+   $Grid and grooves 
+   ========================================================================== */
+
+body {
+	/* see clearfix */
+	margin: 0 auto;
+	width: 940px;
+	border-bottom: 1px solid #fff;
+}
+
+.head {
+	/* see clearfix */
+	border-bottom: 1px solid #a6a5a5;
+	padding-bottom: 10px;
+}
+
+	.head-in {
+		display: block;
+		width: 100%;
+		border-top: 1px solid #a6a5a5;
+		border-bottom: 1px solid #fff;
+	}
+
+.container {
+	/* see clearfix */
+	padding-top: 44px;
+	padding-bottom: 44px;
+	border-top: 1px solid #fff;
+	border-bottom: 1px solid #a6a5a5;
+}
+
+.foot {
+	/* see clearfix */
+	border-top: 1px solid #fff;
+	border-bottom: 1px solid #a6a5a5;
+}
+
+.content {
+	float: left;
+	width: 542px;
+	padding-right: 49px;
+	border-right: 1px solid #a6a5a5;
+	height: 300px;
+}
+
+.sidebar {
+	float: right;
+	width: 298px;
+	padding-left: 49px;
+	border-left: 1px solid #fff;
+	height: 300px;
+}
+
+
+
+/*! ==========================================================================
+   $Helper classes
+   ========================================================================== */
+
+/* $clearfix */
+body
+,.head
+,.container
+,.foot
+{
+	#fixes > .clearfix();
 }
