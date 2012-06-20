@@ -638,6 +638,43 @@ a:focus .ico-pi,
 a:active .ico-pi {
   background-position: -160px -40px;
 }
+.ico-small {
+  display: inline-block;
+  overflow: hidden !important;
+  /*	width: 38px !important;*/
+
+  height: 17px !important;
+  background-image: url(../i/ico/small.png);
+  background-repeat: no-repeat;
+  background-position: 0 0;
+}
+.ico-comments {
+  width: 20px !important;
+  background-position: 0 0;
+}
+a:hover .ico-comments,
+a:focus .ico-comments,
+a:active .ico-comments {
+  background-position: 0 -20px;
+}
+.ico-likes {
+  width: 16px !important;
+  background-position: -20px 0;
+}
+a:hover .ico-likes,
+a:focus .ico-likes,
+a:active .ico-likes {
+  background-position: -20px -20px;
+}
+.ico-reblog {
+  width: 17px !important;
+  background-position: -40px 0;
+}
+a:hover .ico-reblog,
+a:focus .ico-reblog,
+a:active .ico-reblog {
+  background-position: -40px -20px;
+}
 /* $menu */
 .menu {
   /* this is to match brand */
