@@ -589,7 +589,7 @@ body {
 }
 /* $icons */
 .ico,
-.ico-small {
+.ico-med {
   display: inline-block;
   overflow: hidden !important;
   width: 38px !important;
