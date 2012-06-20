@@ -624,6 +624,36 @@ body {
 	margin-top: 0;
 }
 
+.entry-footer {
+	color: #bdbbbb;
+	#rems > .margin-top(30);
+	#rems > .font-size(13);
+	
+	a:link, a:visited {
+		color: #bdbbbb;
+		background-color: transparent;
+		text-decoration: none;
+		margin-right: 20px;
+	}
+	
+	a:focus, a:hover, a:visited {
+		color: #4d4d4d;
+		background-color: transparent;
+		text-decoration: none;
+	}
+}
+
+.article-featurequote {
+	#rems > .font-size(20);
+	margin-left: 0;
+	margin-right: 0;
+	
+	padding-bottom: 50px;
+	background-image: url(../i/article/quote-background.png);
+	background-repeat: no-repeat;
+	background-position: 50% 100%;
+}
+
 /* $brand */
 .brand {
 	/* needs to reset both p & h1 */
@@ -665,6 +695,7 @@ body {
 	background-image: url(../i/ico/med.png);
 	background-repeat: no-repeat;
 	background-position: 0 0;
+	vertical-align: bottom;
 }
 
 .ico-me {
@@ -702,6 +733,7 @@ body {
 }
 
 .ico-small {
+	vertical-align: bottom;
 	display: inline-block;
 	overflow: hidden !important;
 /*	width: 38px !important;*/
@@ -736,6 +768,7 @@ body {
 }
 
 .ico-large {
+	vertical-align: bottom;
 	display: inline-block;
 	overflow: hidden !important;
 /*	width: 38px !important;*/
@@ -796,7 +829,6 @@ body {
 	/* this is to match brand */
 	line-height: 50px;
 	line-height: 3.5714rem;
-	.ico {vertical-align: bottom;}
 }
 
 /* $time */

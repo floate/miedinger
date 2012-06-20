@@ -575,6 +575,37 @@ body {
 .entry-title {
   margin-top: 0;
 }
+.entry-footer {
+  color: #bdbbbb;
+  margin-top: 30px;
+  margin-top: 2.1429rem;
+  font-size: 13px;
+  font-size: 0.9286rem;
+}
+.entry-footer a:link,
+.entry-footer a:visited {
+  color: #bdbbbb;
+  background-color: transparent;
+  text-decoration: none;
+  margin-right: 20px;
+}
+.entry-footer a:focus,
+.entry-footer a:hover,
+.entry-footer a:visited {
+  color: #4d4d4d;
+  background-color: transparent;
+  text-decoration: none;
+}
+.article-featurequote {
+  font-size: 20px;
+  font-size: 1.4286rem;
+  margin-left: 0;
+  margin-right: 0;
+  padding-bottom: 50px;
+  background-image: url(../i/article/quote-background.png);
+  background-repeat: no-repeat;
+  background-position: 50% 100%;
+}
 /* $brand */
 .brand {
   /* needs to reset both p & h1 */
@@ -615,6 +646,7 @@ body {
   background-image: url(../i/ico/med.png);
   background-repeat: no-repeat;
   background-position: 0 0;
+  vertical-align: bottom;
 }
 .ico-me {
   background-position: 0 0;
@@ -657,6 +689,7 @@ a:active .ico-pi {
   background-position: -160px -40px;
 }
 .ico-small {
+  vertical-align: bottom;
   display: inline-block;
   overflow: hidden !important;
   /*	width: 38px !important;*/
@@ -694,6 +727,7 @@ a:active .ico-reblog {
   background-position: -40px -20px;
 }
 .ico-large {
+  vertical-align: bottom;
   display: inline-block;
   overflow: hidden !important;
   /*	width: 38px !important;*/
@@ -747,9 +781,6 @@ a:active .ico-reblog {
 
   line-height: 50px;
   line-height: 3.5714rem;
-}
-.menu .ico {
-  vertical-align: bottom;
 }
 /* $time */
 .time {
