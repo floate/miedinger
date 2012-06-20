@@ -611,12 +611,17 @@ body {
 
 .entry-meta-head {
 	float: left;
-	width: 43px;
+	width: 47px;
 	margin-right: 30px;
+	text-align: center;
 }
 
 .entry-title, .entry-body, .entry-footer {
-	margin-left: 30+43px;
+	margin-left: 30+47px;
+}
+
+.entry-title {
+	margin-top: 0;
 }
 
 /* $brand */
@@ -792,6 +797,39 @@ body {
 	line-height: 50px;
 	line-height: 3.5714rem;
 	.ico {vertical-align: bottom;}
+}
+
+/* $time */
+.time {
+	font-weight: bold;
+	text-transform: uppercase;
+	line-height: 1;
+	display: block;
+	border-top: 1px solid #a6a5a5;
+}
+
+.time-day,
+.time-month,
+.time-year {
+	display: block;
+}
+
+.time-day {
+	border-top: 1px solid #fff;
+	#rems > .font-size(29);
+}
+
+.time-month {
+	border-bottom: 1px solid #a6a5a5;
+	#rems > .font-size(17);
+	#rems > .padding-bottom(8);
+}
+
+.time-year {
+	color: #bdbbbb;
+	border-top: 1px solid #fff;
+	#rems > .font-size(15);
+	#rems > .padding-top(3);
 }
 
 /*! ==========================================================================
