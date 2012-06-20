@@ -557,6 +557,20 @@ body {
 /*! ==========================================================================
    $Modules
    ========================================================================== */
+/* $article & $entry */
+.article {
+  margin-left: 10px;
+}
+.entry-meta-head {
+  float: left;
+  width: 43px;
+  margin-right: 30px;
+}
+.entry-title,
+.entry-body,
+.entry-footer {
+  margin-left: 73px;
+}
 /* $brand */
 .brand {
   /* needs to reset both p & h1 */
