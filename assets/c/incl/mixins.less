@@ -1,0 +1,450 @@
+/* ********************************************************
+
+######## ########  #### ########        ##       ########  ######   ######
+##       ##     ##  ##     ##           ##       ##       ##    ## ##    ##
+##       ##     ##  ##     ##           ##       ##       ##       ##
+######   ##     ##  ##     ##           ##       ######    ######   ######
+##       ##     ##  ##     ##           ##       ##             ##       ##
+##       ##     ##  ##     ##       ### ##       ##       ##    ## ##    ##
+######## ########  ####    ##       ### ######## ########  ######   ######
+
+##    ##  #######  ########         ######   ######   ######
+###   ## ##     ##    ##           ##    ## ##    ## ##    ##
+####  ## ##     ##    ##           ##       ##       ##
+## ## ## ##     ##    ##           ##        ######   ######
+##  #### ##     ##    ##           ##             ##       ##
+##   ### ##     ##    ##       ### ##    ## ##    ## ##    ##
+##    ##  #######     ##       ###  ######   ######   ######
+
+
+******************************************************** */
+
+/* Minimum Page mixins. Do not compile this file */
+
+#fixes {
+	.inline-block() {
+		display:inline-block;
+		*display:inline;
+		*zoom: 1;
+	}
+
+	.clearfix() {
+		zoom: 1;
+		&:after {
+			display: block;
+			visibility: hidden;
+			font-size: 0;
+			height: 0;
+			clear: both;
+			content: ".";
+		}
+	}
+
+	.shortclearfix() {
+		zoom: 1;
+
+		&:before,&:after {
+			content:"";
+		    display:table;
+		}
+
+		&:after {
+			clear: both;
+		}
+	}
+}
+
+#rems {
+	.margin(@pixels1: 'null', @pixels2: 'null', @pixels3: 'null', @pixels4: 'null') {
+		//ugly, can't access outside scope
+		@i1: @pixels1;
+		@i2: @pixels2;
+		@i3: @pixels3;
+		@i4: @pixels4;
+		@bf: @baseFontSize;
+		//calculate rem values
+		@rem1: ~`(this.i1.toJS() == "'null'")?'':Math.round(10000*parseFloat(this.i1.toJS())/parseFloat(this.bf.toJS()))/10000`;
+		@rem1a: ~`(this.rem1.toJS() != 0)?this.rem1.toJS() + 'rem':this.rem1.toJS()`;
+		@rem2: ~`(this.i2.toJS() == "'null'")?'':Math.round(10000*parseFloat(this.i2.toJS())/parseFloat(this.bf.toJS()))/10000`;
+		@rem2a: ~`(this.rem2.toJS() != 0)?this.rem2.toJS() + 'rem':this.rem2.toJS()`;
+		@rem3: ~`(this.i3.toJS() == "'null'")?'':Math.round(10000*parseFloat(this.i3.toJS())/parseFloat(this.bf.toJS()))/10000`;
+		@rem3a: ~`(this.rem3.toJS() != 0)?this.rem3.toJS() + 'rem':this.rem3.toJS()`;
+		@rem4: ~`(this.i4.toJS() == "'null'")?'':Math.round(10000*parseFloat(this.i4.toJS())/parseFloat(this.bf.toJS()))/10000`;
+		@rem4a: ~`(this.rem4.toJS() != 0)?this.rem4.toJS() + 'rem':this.rem4.toJS()`;
+		//calculate pixels values
+		@px1: ~`(this.i1.toJS() == "'null'")?'':parseFloat(this.i1.toJS())`;
+		@px1a: ~`(this.px1.toJS() != 0)?this.px1.toJS() + 'px':this.px1.toJS()`;
+		@px2: ~`(this.i2.toJS() == "'null'")?'':parseFloat(this.i2.toJS())`;
+		@px2a: ~`(this.px2.toJS() != 0)?this.px2.toJS() + 'px':this.px2.toJS()`;
+		@px3: ~`(this.i3.toJS() == "'null'")?'':parseFloat(this.i3.toJS())`;
+		@px3a: ~`(this.px3.toJS() != 0)?this.px3.toJS() + 'px':this.px3.toJS()`;
+		@px4: ~`(this.i4.toJS() == "'null'")?'':parseFloat(this.i4.toJS())`;
+		@px4a: ~`(this.px4.toJS() != 0)?this.px4.toJS() + 'px':this.px4.toJS()`;
+		//output mixin
+		margin: @px1a @px2a @px3a @px4a;
+		margin: @rem1a @rem2a @rem3a @rem4a;
+	}
+
+	.margin-top(@pixels1: 'null') {
+		//ugly, can't access outside scope
+		@i1: @pixels1;
+		@bf: @baseFontSize;
+		//calculate rem values
+		@rem1: ~`(this.i1.toJS() == "'null'")?'':Math.round(10000*parseFloat(this.i1.toJS())/parseFloat(this.bf.toJS()))/10000`;
+		@rem1a: ~`(this.rem1.toJS() != 0)?this.rem1.toJS() + 'rem':this.rem1.toJS()`;
+		//calculate pixels values
+		@px1: ~`(this.i1.toJS() == "'null'")?'':parseFloat(this.i1.toJS())`;
+		@px1a: ~`(this.px1.toJS() != 0)?this.px1.toJS() + 'px':this.px1.toJS()`;
+		//output mixin
+		margin-top: @px1a;
+		margin-top: @rem1a;
+	}
+
+	.margin-right(@pixels1: 'null') {
+		//ugly, can't access outside scope
+		@i1: @pixels1;
+		@bf: @baseFontSize;
+		//calculate rem values
+		//calculate rem values
+		@rem1: ~`(this.i1.toJS() == "'null'")?'':Math.round(10000*parseFloat(this.i1.toJS())/parseFloat(this.bf.toJS()))/10000`;
+		@rem1a: ~`(this.rem1.toJS() != 0)?this.rem1.toJS() + 'rem':this.rem1.toJS()`;
+		//calculate pixels values
+		@px1: ~`(this.i1.toJS() == "'null'")?'':parseFloat(this.i1.toJS())`;
+		@px1a: ~`(this.px1.toJS() != 0)?this.px1.toJS() + 'px':this.px1.toJS()`;
+		//output mixin
+		margin-right: @px1a;
+		margin-right: @rem1a;
+	}
+
+	.margin-bottom(@pixels1: 'null') {
+		//ugly, can't access outside scope
+		@i1: @pixels1;
+		@bf: @baseFontSize;
+		//calculate rem values
+		@rem1: ~`(this.i1.toJS() == "'null'")?'':Math.round(10000*parseFloat(this.i1.toJS())/parseFloat(this.bf.toJS()))/10000`;
+		@rem1a: ~`(this.rem1.toJS() != 0)?this.rem1.toJS() + 'rem':this.rem1.toJS()`;
+		//calculate pixels values
+		@px1: ~`(this.i1.toJS() == "'null'")?'':parseFloat(this.i1.toJS())`;
+		@px1a: ~`(this.px1.toJS() != 0)?this.px1.toJS() + 'px':this.px1.toJS()`;
+		//output mixin
+		margin-bottom: @px1a;
+		margin-bottom: @rem1a;
+	}
+
+	.margin-left(@pixels1: 'null') {
+		//ugly, can't access outside scope
+		@i1: @pixels1;
+		@bf: @baseFontSize;
+		//calculate rem values
+		@rem1: ~`(this.i1.toJS() == "'null'")?'':Math.round(10000*parseFloat(this.i1.toJS())/parseFloat(this.bf.toJS()))/10000`;
+		@rem1a: ~`(this.rem1.toJS() != 0)?this.rem1.toJS() + 'rem':this.rem1.toJS()`;
+		//calculate pixels values
+		@px1: ~`(this.i1.toJS() == "'null'")?'':parseFloat(this.i1.toJS())`;
+		@px1a: ~`(this.px1.toJS() != 0)?this.px1.toJS() + 'px':this.px1.toJS()`;
+		//output mixin
+		margin-left: @px1a;
+		margin-left: @rem1a;
+	}
+
+	.padding(@pixels1: 'null', @pixels2: 'null', @pixels3: 'null', @pixels4: 'null') {
+		//ugly, can't access outside scope
+		@i1: @pixels1;
+		@i2: @pixels2;
+		@i3: @pixels3;
+		@i4: @pixels4;
+		@bf: @baseFontSize;
+		//calculate rem values
+		@rem1: ~`(this.i1.toJS() == "'null'")?'':Math.round(10000*parseFloat(this.i1.toJS())/parseFloat(this.bf.toJS()))/10000`;
+		@rem1a: ~`(this.rem1.toJS() != 0)?this.rem1.toJS() + 'rem':this.rem1.toJS()`;
+		@rem2: ~`(this.i2.toJS() == "'null'")?'':Math.round(10000*parseFloat(this.i2.toJS())/parseFloat(this.bf.toJS()))/10000`;
+		@rem2a: ~`(this.rem2.toJS() != 0)?this.rem2.toJS() + 'rem':this.rem2.toJS()`;
+		@rem3: ~`(this.i3.toJS() == "'null'")?'':Math.round(10000*parseFloat(this.i3.toJS())/parseFloat(this.bf.toJS()))/10000`;
+		@rem3a: ~`(this.rem3.toJS() != 0)?this.rem3.toJS() + 'rem':this.rem3.toJS()`;
+		@rem4: ~`(this.i4.toJS() == "'null'")?'':Math.round(10000*parseFloat(this.i4.toJS())/parseFloat(this.bf.toJS()))/10000`;
+		@rem4a: ~`(this.rem4.toJS() != 0)?this.rem4.toJS() + 'rem':this.rem4.toJS()`;
+		//calculate pixels values
+		@px1: ~`(this.i1.toJS() == "'null'")?'':parseFloat(this.i1.toJS())`;
+		@px1a: ~`(this.px1.toJS() != 0)?this.px1.toJS() + 'px':this.px1.toJS()`;
+		@px2: ~`(this.i2.toJS() == "'null'")?'':parseFloat(this.i2.toJS())`;
+		@px2a: ~`(this.px2.toJS() != 0)?this.px2.toJS() + 'px':this.px2.toJS()`;
+		@px3: ~`(this.i3.toJS() == "'null'")?'':parseFloat(this.i3.toJS())`;
+		@px3a: ~`(this.px3.toJS() != 0)?this.px3.toJS() + 'px':this.px3.toJS()`;
+		@px4: ~`(this.i4.toJS() == "'null'")?'':parseFloat(this.i4.toJS())`;
+		@px4a: ~`(this.px4.toJS() != 0)?this.px4.toJS() + 'px':this.px4.toJS()`;
+		//output mixin
+		padding: @px1a @px2a @px3a @px4a;
+		padding: @rem1a @rem2a @rem3a @rem4a;
+	}
+
+	.padding-top(@pixels1: 'null') {
+		//ugly, can't access outside scope
+		@i1: @pixels1;
+		@bf: @baseFontSize;
+		//calculate rem values
+		@rem1: ~`(this.i1.toJS() == "'null'")?'':Math.round(10000*parseFloat(this.i1.toJS())/parseFloat(this.bf.toJS()))/10000`;
+		@rem1a: ~`(this.rem1.toJS() != 0)?this.rem1.toJS() + 'rem':this.rem1.toJS()`;
+		//calculate pixels values
+		@px1: ~`(this.i1.toJS() == "'null'")?'':parseFloat(this.i1.toJS())`;
+		@px1a: ~`(this.px1.toJS() != 0)?this.px1.toJS() + 'px':this.px1.toJS()`;
+		//output mixin
+		padding-top: @px1a;
+		padding-top: @rem1a;
+	}
+
+	.padding-right(@pixels1: 'null') {
+		//ugly, can't access outside scope
+		@i1: @pixels1;
+		@bf: @baseFontSize;
+		//calculate rem values
+		//calculate rem values
+		@rem1: ~`(this.i1.toJS() == "'null'")?'':Math.round(10000*parseFloat(this.i1.toJS())/parseFloat(this.bf.toJS()))/10000`;
+		@rem1a: ~`(this.rem1.toJS() != 0)?this.rem1.toJS() + 'rem':this.rem1.toJS()`;
+		//calculate pixels values
+		@px1: ~`(this.i1.toJS() == "'null'")?'':parseFloat(this.i1.toJS())`;
+		@px1a: ~`(this.px1.toJS() != 0)?this.px1.toJS() + 'px':this.px1.toJS()`;
+		//output mixin
+		padding-right: @px1a;
+		padding-right: @rem1a;
+	}
+
+	.padding-bottom(@pixels1: 'null') {
+		//ugly, can't access outside scope
+		@i1: @pixels1;
+		@bf: @baseFontSize;
+		//calculate rem values
+		@rem1: ~`(this.i1.toJS() == "'null'")?'':Math.round(10000*parseFloat(this.i1.toJS())/parseFloat(this.bf.toJS()))/10000`;
+		@rem1a: ~`(this.rem1.toJS() != 0)?this.rem1.toJS() + 'rem':this.rem1.toJS()`;
+		//calculate pixels values
+		@px1: ~`(this.i1.toJS() == "'null'")?'':parseFloat(this.i1.toJS())`;
+		@px1a: ~`(this.px1.toJS() != 0)?this.px1.toJS() + 'px':this.px1.toJS()`;
+		//output mixin
+		padding-bottom: @px1a;
+		padding-bottom: @rem1a;
+	}
+
+	.padding-left(@pixels1: 'null') {
+		//ugly, can't access outside scope
+		@i1: @pixels1;
+		@bf: @baseFontSize;
+		//calculate rem values
+		@rem1: ~`(this.i1.toJS() == "'null'")?'':Math.round(10000*parseFloat(this.i1.toJS())/parseFloat(this.bf.toJS()))/10000`;
+		@rem1a: ~`(this.rem1.toJS() != 0)?this.rem1.toJS() + 'rem':this.rem1.toJS()`;
+		//calculate pixels values
+		@px1: ~`(this.i1.toJS() == "'null'")?'':parseFloat(this.i1.toJS())`;
+		@px1a: ~`(this.px1.toJS() != 0)?this.px1.toJS() + 'px':this.px1.toJS()`;
+		//output mixin
+		padding-left: @px1a;
+		padding-left: @rem1a;
+	}
+
+	.font-size(@pixels1: 'null') {
+		//ugly, can't access outside scope
+		@i1: @pixels1;
+		@bf: @baseFontSize;
+		//calculate rem values
+		@rem1: ~`(this.i1.toJS() == "'null'")?'':Math.round(10000*parseFloat(this.i1.toJS())/parseFloat(this.bf.toJS()))/10000`;
+		@rem1a: ~`(this.rem1.toJS() != 0)?this.rem1.toJS() + 'rem':this.rem1.toJS()`;
+		//calculate pixels values
+		@px1: ~`(this.i1.toJS() == "'null'")?'':parseFloat(this.i1.toJS())`;
+		@px1a: ~`(this.px1.toJS() != 0)?this.px1.toJS() + 'px':this.px1.toJS()`;
+		//output mixin
+		font-size: @px1a;
+		font-size: @rem1a;
+	}
+
+	.height(@pixels1: 'null') {
+		//ugly, can't access outside scope
+		@i1: @pixels1;
+		@bf: @baseFontSize;
+		//calculate rem values
+		@rem1: ~`(this.i1.toJS() == "'null'")?'':Math.round(10000*parseFloat(this.i1.toJS())/parseFloat(this.bf.toJS()))/10000`;
+		@rem1a: ~`(this.rem1.toJS() != 0)?this.rem1.toJS() + 'rem':this.rem1.toJS()`;
+		//calculate pixels values
+		@px1: ~`(this.i1.toJS() == "'null'")?'':parseFloat(this.i1.toJS())`;
+		@px1a: ~`(this.px1.toJS() != 0)?this.px1.toJS() + 'px':this.px1.toJS()`;
+		//output mixin
+		height: @px1a;
+		height: @rem1a;
+	}
+
+	.min-height(@pixels1: 'null') {
+		//ugly, can't access outside scope
+		@i1: @pixels1;
+		@bf: @baseFontSize;
+		//calculate rem values
+		@rem1: ~`(this.i1.toJS() == "'null'")?'':Math.round(10000*parseFloat(this.i1.toJS())/parseFloat(this.bf.toJS()))/10000`;
+		@rem1a: ~`(this.rem1.toJS() != 0)?this.rem1.toJS() + 'rem':this.rem1.toJS()`;
+		//calculate pixels values
+		@px1: ~`(this.i1.toJS() == "'null'")?'':parseFloat(this.i1.toJS())`;
+		@px1a: ~`(this.px1.toJS() != 0)?this.px1.toJS() + 'px':this.px1.toJS()`;
+		//output mixin
+		min-height: @px1a;
+		min-height: @rem1a;
+	}
+}
+
+
+// CSS3 PROPERTIES
+// --------------------------------------------------
+
+// Border Radius
+.border-radius(@radius: 3px) {
+  -webkit-border-radius: @radius;
+     -moz-border-radius: @radius;
+          border-radius: @radius;
+
+		  -moz-background-clip: padding; -webkit-background-clip: padding-box; background-clip: padding-box;
+
+}
+
+// Drop shadows
+.box-shadow(@shadow: 0 1px 3px rgba(0,0,0,.25)) {
+  -webkit-box-shadow: @shadow;
+     -moz-box-shadow: @shadow;
+          box-shadow: @shadow;
+}
+
+// Transitions
+.transition(@transition) {
+  -webkit-transition: @transition;
+     -moz-transition: @transition;
+      -ms-transition: @transition;
+       -o-transition: @transition;
+          transition: @transition;
+}
+
+// Transformations
+.rotate(@degrees) {
+  -webkit-transform: rotate(@degrees);
+     -moz-transform: rotate(@degrees);
+      -ms-transform: rotate(@degrees);
+       -o-transform: rotate(@degrees);
+          transform: rotate(@degrees);
+}
+.scale(@ratio) {
+  -webkit-transform: scale(@ratio);
+     -moz-transform: scale(@ratio);
+      -ms-transform: scale(@ratio);
+       -o-transform: scale(@ratio);
+          transform: scale(@ratio);
+}
+.translate(@x: 0, @y: 0) {
+  -webkit-transform: translate(@x, @y);
+     -moz-transform: translate(@x, @y);
+      -ms-transform: translate(@x, @y);
+       -o-transform: translate(@x, @y);
+          transform: translate(@x, @y);
+}
+.skew(@x: 0, @y: 0) {
+  -webkit-transform: skew(@x, @y);
+     -moz-transform: skew(@x, @y);
+      -ms-transform: skew(@x, @y);
+       -o-transform: skew(@x, @y);
+          transform: skew(@x, @y);
+}
+.translate3d(@x: 0, @y: 0, @z: 0) {
+  -webkit-transform: translate(@x, @y, @z);
+     -moz-transform: translate(@x, @y, @z);
+      -ms-transform: translate(@x, @y, @z);
+       -o-transform: translate(@x, @y, @z);
+          transform: translate(@x, @y, @z);
+}
+
+// Background clipping
+// Heads up: FF 3.6 and under need "padding" instead of "padding-box"
+.background-clip(@clip) {
+  -webkit-background-clip: @clip;
+     -moz-background-clip: @clip;
+          background-clip: @clip;
+}
+
+// Background sizing
+.background-size(@size){
+  -webkit-background-size: @size;
+     -moz-background-size: @size;
+       -o-background-size: @size;
+          background-size: @size;
+}
+
+
+#gradient {
+  .horizontal(@startColor: #555, @endColor: #333) {
+    background-color: @endColor;
+    background-image: -moz-linear-gradient(left, @startColor, @endColor); // FF 3.6+
+    background-image: -ms-linear-gradient(left, @startColor, @endColor); // IE10
+    background-image: -webkit-gradient(linear, 0 0, 100% 0, from(@startColor), to(@endColor)); // Safari 4+, Chrome 2+
+    background-image: -webkit-linear-gradient(left, @startColor, @endColor); // Safari 5.1+, Chrome 10+
+    background-image: -o-linear-gradient(left, @startColor, @endColor); // Opera 11.10
+    background-image: linear-gradient(left, @startColor, @endColor); // Le standard
+    background-repeat: repeat-x;
+    filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=1)",@startColor,@endColor)); // IE9 and down
+  }
+  .vertical(@startColor: #555, @endColor: #333) {
+    background-color: mix(@startColor, @endColor, 60%);
+    background-image: -moz-linear-gradient(top, @startColor, @endColor); // FF 3.6+
+    background-image: -ms-linear-gradient(top, @startColor, @endColor); // IE10
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(@startColor), to(@endColor)); // Safari 4+, Chrome 2+
+    background-image: -webkit-linear-gradient(top, @startColor, @endColor); // Safari 5.1+, Chrome 10+
+    background-image: -o-linear-gradient(top, @startColor, @endColor); // Opera 11.10
+    background-image: linear-gradient(top, @startColor, @endColor); // The standard
+    background-repeat: repeat-x;
+    filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=0)",@startColor,@endColor)); // IE9 and down
+  }
+  .directional(@startColor: #555, @endColor: #333, @deg: 45deg) {
+    background-color: @endColor;
+    background-repeat: repeat-x;
+    background-image: -moz-linear-gradient(@deg, @startColor, @endColor); // FF 3.6+
+    background-image: -ms-linear-gradient(@deg, @startColor, @endColor); // IE10
+    background-image: -webkit-linear-gradient(@deg, @startColor, @endColor); // Safari 5.1+, Chrome 10+
+    background-image: -o-linear-gradient(@deg, @startColor, @endColor); // Opera 11.10
+    background-image: linear-gradient(@deg, @startColor, @endColor); // The standard
+  }
+  .vertical-three-colors(@startColor: #00b3ee, @midColor: #7a43b6, @colorStop: 50%, @endColor: #c3325f) {
+    background-color: mix(@midColor, @endColor, 80%);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(@startColor), color-stop(@colorStop, @midColor), to(@endColor));
+    background-image: -webkit-linear-gradient(@startColor, @midColor @colorStop, @endColor);
+    background-image: -moz-linear-gradient(top, @startColor, @midColor @colorStop, @endColor);
+    background-image: -ms-linear-gradient(@startColor, @midColor @colorStop, @endColor);
+    background-image: -o-linear-gradient(@startColor, @midColor @colorStop, @endColor);
+    background-image: linear-gradient(@startColor, @midColor @colorStop, @endColor);
+    background-repeat: no-repeat;
+    filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=0)",@startColor,@endColor)); // IE9 and down, gets no color-stop at all for proper fallback
+  }
+
+  .vertical-four-colors(@startColor: #00b3ee, @midColor: #7a43b6, @colorStop: 50%, @midColorII: #7a43b6, @colorStopII: 75%, @endColor: #c3325f) {
+    background-color: mix(@midColor, @endColor, 80%);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(@startColor), color-stop(@colorStop, @midColor), color-stop(@colorStopII, @midColorII), to(@endColor));
+    background-image: -webkit-linear-gradient(@startColor, @midColor @colorStop, @midColorII @colorStopII, @endColor);
+    background-image: -moz-linear-gradient(top, @startColor, @midColor @colorStop, @midColorII @colorStopII, @endColor);
+    background-image: -ms-linear-gradient(@startColor, @midColor @colorStop, @midColorII @colorStopII, @endColor);
+    background-image: -o-linear-gradient(@startColor, @midColor @colorStop, @midColorII @colorStopII, @endColor);
+    background-image: linear-gradient(@startColor, @midColor @colorStop, @midColorII @colorStopII, @endColor);
+    background-repeat: no-repeat;
+    filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=0)",@startColor,@endColor)); // IE9 and down, gets no color-stop at all for proper fallback
+  }
+
+
+
+  .radial(@innerColor: #555, @outerColor: #333)  {
+    background-color: @outerColor;
+    background-image: -webkit-gradient(radial, center center, 0, center center, 460, from(@innerColor), to(@outerColor));
+    background-image: -webkit-radial-gradient(circle, @innerColor, @outerColor);
+    background-image: -moz-radial-gradient(circle, @innerColor, @outerColor);
+    background-image: -ms-radial-gradient(circle, @innerColor, @outerColor);
+    background-image: -o-radial-gradient(circle, @innerColor, @outerColor);
+    background-repeat: no-repeat;
+  }
+  .striped(@color, @angle: -45deg) {
+    background-color: @color;
+    background-image: -webkit-gradient(linear, 0 100%, 100% 0, color-stop(.25, rgba(255,255,255,.15)), color-stop(.25, transparent), color-stop(.5, transparent), color-stop(.5, rgba(255,255,255,.15)), color-stop(.75, rgba(255,255,255,.15)), color-stop(.75, transparent), to(transparent));
+    background-image: -webkit-linear-gradient(@angle, rgba(255,255,255,.15) 25%, transparent 25%, transparent 50%, rgba(255,255,255,.15) 50%, rgba(255,255,255,.15) 75%, transparent 75%, transparent);
+    background-image: -moz-linear-gradient(@angle, rgba(255,255,255,.15) 25%, transparent 25%, transparent 50%, rgba(255,255,255,.15) 50%, rgba(255,255,255,.15) 75%, transparent 75%, transparent);
+    background-image: -ms-linear-gradient(@angle, rgba(255,255,255,.15) 25%, transparent 25%, transparent 50%, rgba(255,255,255,.15) 50%, rgba(255,255,255,.15) 75%, transparent 75%, transparent);
+    background-image: -o-linear-gradient(@angle, rgba(255,255,255,.15) 25%, transparent 25%, transparent 50%, rgba(255,255,255,.15) 50%, rgba(255,255,255,.15) 75%, transparent 75%, transparent);
+    background-image: linear-gradient(@angle, rgba(255,255,255,.15) 25%, transparent 25%, transparent 50%, rgba(255,255,255,.15) 50%, rgba(255,255,255,.15) 75%, transparent 75%, transparent);
+  }
+}
+// Reset filters for IE
+.reset-filter() {
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+}
