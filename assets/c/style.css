@@ -611,6 +611,16 @@ a:focus .ico-pi,
 a:active .ico-pi {
   background-position: -160px -40px;
 }
+/* $menu */
+.menu {
+  /* this is to match brand */
+
+  line-height: 50px;
+  line-height: 3.5714rem;
+}
+.menu .ico {
+  vertical-align: bottom;
+}
 /*! ==========================================================================
    $Helper classes
    ========================================================================== */
