@@ -789,6 +789,7 @@ a:active .ico-reblog {
   line-height: 1;
   display: block;
   border-top: 1px solid #a6a5a5;
+  margin-top: 5px;
 }
 .time-day,
 .time-month,
@@ -826,6 +827,7 @@ a:active .ico-reblog {
 body,
 .head,
 .container,
+.hentry,
 .foot,
 .fork {
   zoom: 1;
@@ -835,6 +837,7 @@ body,
 body:after,
 .head:after,
 .container:after,
+.hentry:after,
 .foot:after,
 .fork:after {
   display: block;
