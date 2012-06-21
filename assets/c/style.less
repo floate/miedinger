@@ -605,6 +605,7 @@ body {
 /* $article & $entry */
 .article {
 	margin-left: 10px;
+	margin-bottom: 88px;
 }
 
 .entry-meta-head {
@@ -650,6 +651,24 @@ body {
 	background-image: url(../i/article/quote-background.png);
 	background-repeat: no-repeat;
 	background-position: 50% 100%;
+}
+
+.article-photo-feature {
+/*	text-align: center;*/
+}
+
+.article-photo-feature > img {
+	border: 5px solid #fff;
+	.box-shadow(0 1px 3px rgba(56,56,56,.75));
+}
+
+.article-photo-caption {
+	background-color: #ddd;
+	#rems > .margin-top(@baseFontSize);
+	#rems > .padding(15);
+	
+	:first-child { margin-top: 0; }
+	:last-child { margin-bottom: 0; }
 }
 
 /* $brand */
