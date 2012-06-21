@@ -552,6 +552,26 @@ body {
   float: right;
   padding-left: 1em;
 }
+.media {
+  /* see clearfix */
+
+  display: block;
+}
+.media-img {
+  float: left;
+  margin-right: 10px;
+}
+.media-img.t-reverse {
+  float: right;
+  margin-left: 10px;
+}
+.media-img > img {
+  display: block;
+}
+.media-body {
+  margin-bottom: 0;
+  overflow: hidden;
+}
 /*! ==========================================================================
    $Modules
    ========================================================================== */
@@ -870,7 +890,8 @@ body,
 .container,
 .hentry,
 .foot,
-.fork {
+.fork,
+.media {
   zoom: 1;
 }
 .cf:after,
@@ -880,7 +901,8 @@ body:after,
 .container:after,
 .hentry:after,
 .foot:after,
-.fork:after {
+.fork:after,
+.media:after {
   display: block;
   visibility: hidden;
   font-size: 0;

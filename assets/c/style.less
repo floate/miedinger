@@ -597,6 +597,30 @@ body {
 	padding-left: 1em;
 }
 
+.media {
+	/* see clearfix */
+	display: block;
+}
+
+.media-img {
+	float:left;
+	margin-right:10px;
+}
+
+.media-img.t-reverse {
+	float:right;
+	margin-left:10px;
+}
+
+.media-img > img {
+	display: block;
+}
+
+.media-body {
+	margin-bottom:0;
+	overflow: hidden;
+}
+
 
 /*! ==========================================================================
    $Modules
@@ -918,6 +942,7 @@ body {
 ,.hentry
 ,.foot
 ,.fork
+,.media
 {
 	#fixes > .clearfix();
 }
