@@ -111,7 +111,6 @@ body {
    ========================================================================== */
 a:link,
 a:visited {
-  color: #272727;
   color: #4D4D4D;
   background-color: transparent;
   text-decoration: underline;
@@ -850,6 +849,11 @@ a:active .ico-source {
 
   line-height: 50px;
   line-height: 3.5714rem;
+}
+.menu a:hover,
+.menu a:focus,
+.menu a:active {
+  background-color: transparent;
 }
 /* $player */
 .player {
