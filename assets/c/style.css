@@ -787,6 +787,15 @@ a:focus .ico-reblog,
 a:active .ico-reblog {
   background-position: -40px -20px;
 }
+.ico-source {
+  width: 26px !important;
+  background-position: -60px 0;
+}
+a:hover .ico-source,
+a:focus .ico-source,
+a:active .ico-source {
+  background-position: -60px -20px;
+}
 .ico-large {
   vertical-align: bottom;
   display: inline-block;
