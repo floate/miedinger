@@ -529,14 +529,12 @@ body {
   width: 542px;
   padding-right: 49px;
   border-right: 1px solid #a6a5a5;
-  height: 300px;
 }
 .sidebar {
   float: right;
   width: 298px;
   padding-left: 49px;
   border-left: 1px solid #fff;
-  height: 300px;
 }
 /*! ==========================================================================
    $Abstraction
