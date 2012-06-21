@@ -526,13 +526,13 @@ body {
 }
 .content {
   float: left;
-  width: 542px;
+  width: 597px;
   padding-right: 49px;
   border-right: 1px solid #a6a5a5;
 }
 .sidebar {
   float: right;
-  width: 298px;
+  width: 243px;
   padding-left: 49px;
   border-left: 1px solid #fff;
 }
@@ -558,6 +558,7 @@ body {
 /* $article & $entry */
 .article {
   margin-left: 10px;
+  margin-bottom: 88px;
 }
 .entry-meta-head {
   float: left;
@@ -603,6 +604,36 @@ body {
   background-image: url(../i/article/quote-background.png);
   background-repeat: no-repeat;
   background-position: 50% 100%;
+}
+.article-photo-feature {
+  /*	text-align: center;*/
+
+}
+.article-photo-feature > img {
+  border: 5px solid #fff;
+  -webkit-box-shadow: 0 1px 3px rgba(56, 56, 56, 0.75);
+  -moz-box-shadow: 0 1px 3px rgba(56, 56, 56, 0.75);
+  box-shadow: 0 1px 3px rgba(56, 56, 56, 0.75);
+}
+.article-photo-caption {
+  background-color: #ddd;
+  margin-top: 14px;
+  margin-top: 1rem;
+  padding: 15px   ;
+  padding: 1.0714rem   ;
+}
+.article-photo-caption :first-child {
+  margin-top: 0;
+}
+.article-photo-caption :last-child {
+  margin-bottom: 0;
+}
+.article-photoset-set {
+  background-color: #fff;
+  border: 5px solid #fff;
+  -webkit-box-shadow: 0 1px 3px rgba(56, 56, 56, 0.75);
+  -moz-box-shadow: 0 1px 3px rgba(56, 56, 56, 0.75);
+  box-shadow: 0 1px 3px rgba(56, 56, 56, 0.75);
 }
 /* $brand */
 .brand {
