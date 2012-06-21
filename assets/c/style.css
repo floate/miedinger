@@ -843,6 +843,36 @@ a:active .ico-reblog {
   line-height: 50px;
   line-height: 3.5714rem;
 }
+/* $player */
+.player {
+  /* see clearfix */
+
+  font-weight: bold;
+  text-shadow: 0 1px 1px #f7f7f7;
+  padding: 14px   ;
+  padding: 1rem   ;
+  background-color: rgba(157, 151, 153, 0.22);
+  border: 1px solid #a6a5a5;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  -webkit-box-shadow: inset 0 1px 1px #ffffff;
+  -moz-box-shadow: inset 0 1px 1px #ffffff;
+  box-shadow: inset 0 1px 1px #ffffff;
+}
+.player-artist {
+  margin-bottom: 0;
+}
+.player-track {
+  margin-top: 0;
+}
+.player-album {
+  font-weight: normal;
+  font-style: italic;
+}
 /* $time */
 .time {
   font-weight: bold;
@@ -891,7 +921,8 @@ body,
 .hentry,
 .foot,
 .fork,
-.media {
+.media,
+.player {
   zoom: 1;
 }
 .cf:after,
@@ -902,7 +933,8 @@ body:after,
 .hentry:after,
 .foot:after,
 .fork:after,
-.media:after {
+.media:after,
+.player:after {
   display: block;
   visibility: hidden;
   font-size: 0;
