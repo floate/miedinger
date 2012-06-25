@@ -571,6 +571,25 @@ body {
 	border-left: 1px solid #fff;
 }
 
+.theme-by {
+	color: #bbb;
+	#rems > .font-size(13);
+	font-weight: bold;
+	text-align: center;
+
+	#rems > .margin-top(30);
+	#rems > .margin-bottom(30);
+
+	
+	> a:link, > a:visited, > a:focus {
+		text-decoration: none;
+	}
+	
+	> a:hover, > a:active {
+		text-decoration: underline;
+	}
+}
+
 /*! ==========================================================================
    $Abstraction
    ========================================================================== */
@@ -626,7 +645,7 @@ body {
 
 /* $article & $entry */
 .article {
-	margin-left: 10px;
+/*	margin-left: 10px;*/
 	margin-bottom: 88px;
 }
 
@@ -637,7 +656,7 @@ body {
 	text-align: center;
 }
 
-.entry-title, .entry-body, .entry-footer {
+.entry-title, .entry-body, .entry-footer, .entry {
 	margin-left: 30+47px;
 }
 
@@ -713,6 +732,26 @@ body {
 
 .article-chat-transcript > .alt {
 	background-color: #e0e0e0;
+}
+
+.entry-notes {
+	#rems > .margin-top(35);
+}
+
+.entry-notes ol {
+	list-style: none;
+	padding-left: 0;
+	border-top: 1px dashed #a6a5a5;
+}
+
+.entry-notes li {
+	padding-top: 1em;
+	padding-bottom: 1em;
+	border-bottom: 1px dashed #a6a5a5;
+}
+
+.entry-notes a {
+	font-weight: bold;
 }
 
 /* $adjacent */

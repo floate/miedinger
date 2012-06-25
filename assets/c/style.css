@@ -530,6 +530,26 @@ body {
   padding-left: 49px;
   border-left: 1px solid #fff;
 }
+.theme-by {
+  color: #bbb;
+  font-size: 13px;
+  font-size: 0.9286rem;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 30px;
+  margin-top: 2.1429rem;
+  margin-bottom: 30px;
+  margin-bottom: 2.1429rem;
+}
+.theme-by > a:link,
+.theme-by > a:visited,
+.theme-by > a:focus {
+  text-decoration: none;
+}
+.theme-by > a:hover,
+.theme-by > a:active {
+  text-decoration: underline;
+}
 /*! ==========================================================================
    $Abstraction
    ========================================================================== */
@@ -574,7 +594,8 @@ body {
    ========================================================================== */
 /* $article & $entry */
 .article {
-  margin-left: 10px;
+  /*	margin-left: 10px;*/
+
   margin-bottom: 88px;
 }
 .entry-meta-head {
@@ -585,7 +606,8 @@ body {
 }
 .entry-title,
 .entry-body,
-.entry-footer {
+.entry-footer,
+.entry {
   margin-left: 77px;
 }
 .entry-title {
@@ -664,6 +686,23 @@ body {
 }
 .article-chat-transcript > .alt {
   background-color: #e0e0e0;
+}
+.entry-notes {
+  margin-top: 35px;
+  margin-top: 2.5rem;
+}
+.entry-notes ol {
+  list-style: none;
+  padding-left: 0;
+  border-top: 1px dashed #a6a5a5;
+}
+.entry-notes li {
+  padding-top: 1em;
+  padding-bottom: 1em;
+  border-bottom: 1px dashed #a6a5a5;
+}
+.entry-notes a {
+  font-weight: bold;
 }
 /* $adjacent */
 .adjacent {
