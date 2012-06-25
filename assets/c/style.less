@@ -761,10 +761,19 @@ body {
 	font-weight: bold;
 	text-shadow: 0 1px 1px #f7f7f7;
 	
+	border-top: 1px solid #a6a5a5;
+	border-bottom: 1px solid #fff;
+}
+
+.adjacent > .in {
+	/* see clearfix */
+	border-bottom: 1px solid #a6a5a5;
+	border-top: 1px solid #fff;
+
 	#rems > .padding-top(14);
 	#rems > .padding-bottom(14);
-	border-top: 2px groove #eee;
-	border-bottom: 2px groove #eee;
+
+
 }
 
 .adjacent a {
@@ -1141,6 +1150,7 @@ body {
 ,.fork
 ,.media
 ,.player
+,.adjacent > .in
 {
 	#fixes > .clearfix();
 }

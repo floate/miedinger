@@ -711,12 +711,18 @@ body {
   font-size: 1.2143rem;
   font-weight: bold;
   text-shadow: 0 1px 1px #f7f7f7;
+  border-top: 1px solid #a6a5a5;
+  border-bottom: 1px solid #fff;
+}
+.adjacent > .in {
+  /* see clearfix */
+
+  border-bottom: 1px solid #a6a5a5;
+  border-top: 1px solid #fff;
   padding-top: 14px;
   padding-top: 1rem;
   padding-bottom: 14px;
   padding-bottom: 1rem;
-  border-top: 2px groove #eee;
-  border-bottom: 2px groove #eee;
 }
 .adjacent a:link,
 .adjacent a:visited {
@@ -1089,7 +1095,8 @@ body,
 .foot,
 .fork,
 .media,
-.player {
+.player,
+.adjacent > .in {
   zoom: 1;
 }
 .cf:after,
@@ -1101,7 +1108,8 @@ body:after,
 .foot:after,
 .fork:after,
 .media:after,
-.player:after {
+.player:after,
+.adjacent > .in:after {
   display: block;
   visibility: hidden;
   font-size: 0;
