@@ -717,6 +717,38 @@ body {
 	background-color: #e0e0e0;
 }
 
+/* $adjacent */
+.adjacent {
+	color: #bbb;
+	#rems > .font-size(17);
+	font-weight: bold;
+	
+	#rems > .padding-top(14);
+	#rems > .padding-bottom(14);
+	border-top: 2px groove #eee;
+	border-bottom: 2px groove #eee;
+}
+
+.adjacent a {
+	&:link,&:visited {
+		color: #bbb;
+		background-color: transparent;
+		text-decoration: none;
+	}
+	&:focus,&:hover,&:active {
+		color: #4D4D4D;
+	}
+}
+
+.adjacent-left:before {
+	content: '< ';
+}
+
+.adjacent-right:after {
+	content: ' >';
+}
+
+
 /* $brand */
 .brand {
 	/* needs to reset both p & h1 */
