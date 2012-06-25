@@ -703,11 +703,31 @@ body {
   list-style: none;
   padding-left: 0;
   border-top: 1px dashed #a6a5a5;
+  position: relative;
+}
+.entry-notes ol:before {
+  border-bottom: 1px dashed #fff;
+  content: ' ';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
 }
 .entry-notes li {
   padding-top: 1em;
   padding-bottom: 1em;
+  border-bottom: 1px dashed #fff;
+  position: relative;
+}
+.entry-notes li:after {
   border-bottom: 1px dashed #a6a5a5;
+  content: ' ';
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
 .entry-notes a {
   font-weight: bold;
