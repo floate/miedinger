@@ -490,7 +490,6 @@ body {
 
   margin: 0 auto;
   width: 940px;
-  border-bottom: 1px solid #fff;
 }
 .head {
   /* see clearfix */
@@ -514,7 +513,6 @@ body {
   padding-top: 44px;
   padding-bottom: 44px;
   border-top: 1px solid #fff;
-  border-bottom: 1px solid #a6a5a5;
 }
 .foot {
   /* see clearfix */
