@@ -520,13 +520,13 @@ body {
 }
 .content {
   float: left;
-  width: 597px;
+  width: 587px;
   padding-right: 49px;
   border-right: 1px solid #a6a5a5;
 }
 .sidebar {
   float: right;
-  width: 243px;
+  width: 253px;
   padding-left: 49px;
   border-left: 1px solid #fff;
 }
@@ -557,6 +557,21 @@ body {
 .theme-by > a:hover,
 .theme-by > a:active {
   text-decoration: underline;
+}
+.singular .theme-by {
+  border-top: 1px solid #a6a5a5;
+  padding-top: 30px;
+  padding-top: 2.1429rem;
+  position: relative;
+}
+.singular .theme-by:before {
+  border-bottom: 1px dashed #fff;
+  content: ' ';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
 }
 /*! ==========================================================================
    $Abstraction
@@ -619,6 +634,14 @@ body {
   margin-left: 77px;
 }
 .entry-title {
+  margin-top: 0;
+}
+.article-text .entry-title,
+.article-chat .entry-title {
+  margin-bottom: 8px;
+  margin-bottom: 0.5714rem;
+}
+.article-text .entry-body > :first-child {
   margin-top: 0;
 }
 .entry-footer {
@@ -691,6 +714,9 @@ body {
 }
 .article-chat-transcript > li {
   padding: 1em;
+}
+.article-chat-transcript > li:first-child {
+  padding-top: 0;
 }
 .article-chat-transcript > .alt {
   background-color: #e0e0e0;
@@ -988,6 +1014,11 @@ a:active .ico-source {
 .player-album {
   font-weight: normal;
   font-style: italic;
+}
+.search-title {
+  margin-top: 0;
+  margin-bottom: 30px;
+  margin-bottom: 2.1429rem;
 }
 /* $time */
 .time {

@@ -198,4 +198,5 @@ $(document).ready(function () {
 		header: false,
 		date: false
 	});
+
 });

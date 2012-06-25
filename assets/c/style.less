@@ -559,14 +559,14 @@ body {
 
 .content {
 	float: left;
-	width: 542+55px;
+	width: 542+45px;
 	padding-right: 49px;
 	border-right: 1px solid #a6a5a5;
 }
 
 .sidebar {
 	float: right;
-	width: 298-55px;
+	width: 298-45px;
 	padding-left: 49px;
 	border-left: 1px solid #fff;
 }
@@ -596,6 +596,22 @@ body {
 	
 	> a:hover, > a:active {
 		text-decoration: underline;
+	}
+	
+	.singular &{
+		border-top: 1px solid #a6a5a5;
+		#rems > .padding-top(30);
+
+		position: relative;
+		&:before {
+			border-bottom: 1px dashed #fff;
+			content: ' ';
+			display: block;
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+		}
 	}
 }
 
@@ -647,7 +663,6 @@ body {
 	overflow: hidden;
 }
 
-
 /*! ==========================================================================
    $Modules
    ========================================================================== */
@@ -670,6 +685,15 @@ body {
 }
 
 .entry-title {
+	margin-top: 0;
+}
+
+.article-text .entry-title,
+.article-chat .entry-title {
+	#rems > .margin-bottom(8);
+}
+
+.article-text .entry-body > :first-child {
 	margin-top: 0;
 }
 
@@ -737,6 +761,10 @@ body {
 
 .article-chat-transcript > li {
 	padding: 1em;
+}
+
+.article-chat-transcript > li:first-child {
+	padding-top: 0;
 }
 
 .article-chat-transcript > .alt {
@@ -1040,6 +1068,13 @@ body {
 	font-weight: normal;
 	font-style: italic;
 }
+
+.search-title {
+	margin-top: 0;
+	#rems > .margin-bottom(30);
+}
+
+
 
 /* $time */
 .time {
