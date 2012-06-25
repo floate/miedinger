@@ -85,7 +85,9 @@ html {
   /* 2 */
 
   color: #4d4d4d;
-  background: #eeeeee url(../i/background.png);
+  /*	background: #eee url(../i/background.png);*/
+
+  background: #eeeeee url(http://static.tumblr.com/4g4xfxh/eICm65wjk/background.png);
 }
 /*
  * Addresses font-family inconsistency between 'textarea' and other form elements.
@@ -671,7 +673,9 @@ body {
   margin-left: 0;
   margin-right: 0;
   padding-bottom: 50px;
-  background-image: url(../i/article/quote-background.png);
+  /*	background-image: url(../i/article/quote-background.png);*/
+
+  background-image: url(http://static.tumblr.com/4g4xfxh/UJAm65whg/quote-background.png);
   background-repeat: no-repeat;
   background-position: 50% 100%;
 }
@@ -832,7 +836,9 @@ body {
   overflow: hidden !important;
   width: 38px !important;
   height: 38px !important;
-  background-image: url(../i/ico/med.png);
+  /*	background-image: url(../i/ico/med.png);*/
+
+  background-image: url(http://static.tumblr.com/4g4xfxh/Ik1m65wl8/med.png);
   background-repeat: no-repeat;
   background-position: 0 0;
   vertical-align: middle;
@@ -884,7 +890,9 @@ a:active .ico-pi {
   /*	width: 38px !important;*/
 
   height: 17px !important;
-  background-image: url(../i/ico/small.png);
+  /*	background-image: url(../i/ico/small.png);*/
+
+  background-image: url(http://static.tumblr.com/4g4xfxh/qAim65wm6/small.png);
   background-repeat: no-repeat;
   background-position: 0 0;
 }
@@ -932,7 +940,9 @@ a:active .ico-source {
 
   /*	height: 17px !important;*/
 
-  background-image: url(../i/ico/large.png);
+  /*	background-image: url(../i/ico/large.png);*/
+
+  background-image: url(http://static.tumblr.com/4g4xfxh/Pvgm65wkb/large.png);
   background-repeat: no-repeat;
   background-position: 0 0;
 }
@@ -1100,7 +1110,9 @@ a:active .ico-source {
   padding-left: 0;
 }
 .widget-list > li {
-  background-image: url(../i/widget/li-background.png);
+  /*	background-image: url(../i/widget/li-background.png);*/
+
+  background-image: url(http://static.tumblr.com/4g4xfxh/cIjm65won/li-background.png);
   background-repeat: no-repeat;
   background-position: 0 5px;
   padding-left: 35px;
