@@ -9,7 +9,11 @@
 
 
 	<meta name="Description" content="{MetaDescription}" />
-	
+	<!-- DEFAULT TEXT -->
+	<meta name="text:About Me URL" content=""/>	
+	<meta name="text:Facebook URL" content=""/>	
+	<meta name="text:LinkedIn URL" content=""/>	
+	<meta name="text:Pinterest Username" content=""/>	
 
 </head>
 {block:PermalinkPage}
@@ -18,10 +22,98 @@
 {block:IndexPage}
 	<body class="list">
 {/block:IndexPage}
+{block:TagPage}
+	<body class="list">
+{/block:TagPage}
 {block:SearchPage}
 	<body class="list search">
 {/block:SearchPage}
 	
+
+<header class="header head">
+	<div class="fork">
+		
+		{block:PermalinkPage}
+			<p class="brand fork-left"><a href="/">{Title}</a></p>
+		{/block:PermalinkPage}
+		{block:IndexPage}
+			<h1 class="brand fork-left"><a href="/">{Title}</a></h1>
+		{/block:IndexPage}
+		{block:TagPage}
+			<p class="brand fork-left"><a href="/">{Title}</a></p>
+		{/block:TagPage}
+		{block:SearchPage}
+			<p class="brand fork-left"><a href="/">{Title}</a></p>
+		{/block:SearchPage}
+	
+		<nav class="nav menu fork-right">
+			{block:IfAboutMeURL}<a href="{text:About Me URL}"><i class="ico ico-me"></i></a>{/block:IfAboutMeURL}
+			{block:IfFacebookURL}<a href="{text:Facebook URL}"><i class="ico ico-fb"></i></a>{/block:IfFacebookURL}
+			{block:Twitter}<a href="http://twitter.com/{TwitterUsername}"><i class="ico ico-tw"></i></a>{/block:Twitter}
+			{block:IfLinkedInURL}<a href="{text:LinkedIn URL}"><i class="ico ico-li"></i></a>{/block:IfLinkedInURL}
+			{block:IfPinterestUsername}<a href="http://pinterest.com/{text:Pinterest Username}/"><i class="ico ico-pi"></i></a>{/block:IfPinterestUsername}
+		</nav>
+	</div>
+	
+<i class="head-in"></i></header>
+
+
+
+<div class="container">
+	<div class="content">
+		{block:TagPage}
+			<h1 class="search-title h2">Posts tagged {Tag}</h1>
+		{/block:TagPage}
+		{block:SearchPage}
+			<h1 class="search-title h2">{SearchResultCount} results found for {SearchQuery}</h1>
+		{/block:SearchPage}
+		
+
+		{block:Posts}
+		<article class="hentry article article-{PostType}">
+			<header class="entry-header">
+				<div class="entry-meta entry-meta-head">
+					<i class="ico-large ico-{PostType}"></i>
+					<time itemprop="publishDate" datetime="{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero}T{24HourWithZero}:{Minutes}:{Seconds}+00:00" pubdate class="entry-date time">
+						<span class="time-day">{DayOfMonth}</span>
+						<span class="time-month">{ShortMonth}</span>
+						<span class="time-year">{Year}</span>
+					</time>
+				</div>
+				
+				{block:Title}<h2 class="entry-title"> {Title} </h2>{/block:Title}
+			</header>
+			
+			<div class="entry-body">
+				
+				<blockquote class="article-featurequote">You can say, “I love you” in Helvetica. And you can say it with Helvetica Extra Light if you want to be really fancy. Or you can say it with the Extra Bold if it's really intensive and passionate, you know, and it might work.</blockquote>
+				<div><p>Massimo Vignelli</p></div>
+				
+				
+			</div>
+			
+			<footer class="entry-meta entry-footer">
+				{block:NoteCount}
+					<a href="#"><i class="ico-small ico-comments"></i> {NoteCount} <span class="accessibility">notes</span></a>
+				{/block:NoteCount}
+				{block:HasTags}{block:Tags}
+					<a href="{TagURL}">#{Tag}</a>
+				{/block:Tags}{/block:HasTags}
+				{block:RebloggedFrom}
+					<a href="{ReblogParentURL}"><i class="ico-small ico-reblog"></i> This is a reblog</a>
+				{/block:RebloggedFrom}
+			</footer>
+		</article>
+		{/block:Posts}
+
+
+
+
+
+
+
+
+
 	
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
 	<script src="http://static.tumblr.com/4g4xfxh/Uiim65wym/site.js" type="text/javascript"></script>
