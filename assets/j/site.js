@@ -41,7 +41,7 @@ function recent_tweets(data) {
 		out = out + '<li>';
 		out = out + data[i].text;
 		out = out + '  <span class="widget-time">';
-		out = out + '<a href=\"http://twitter.com/{TwitterUsername}/status/';
+		out = out + '<a href=\"http://twitter.com/' + twitterUsername + '/status/';
 		out = out + (data[i].id_str ? data[i].id_str : data[i].id) + '\">';
 		out = out + relative_time(data[i].created_at);
 		out = out + '</a>';
@@ -192,11 +192,13 @@ function recent_tweets(data) {
 
 
 $(document).ready(function () {
-	$('#wgtpi').rssfeed('http://www.pinterest.com/mattinnes/feed.rss', {
-		limit: 6,
-		snippet: false,
-		header: false,
-		date: false
-	});
+	if (typeof pinterestUsername == "string") {
+		$('#wgtpi').rssfeed('http://www.pinterest.com/' + pinterestUsername + '/feed.rss', {
+			limit: 6,
+			snippet: false,
+			header: false,
+			date: false
+		});
+	}
 
 });
