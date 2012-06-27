@@ -7,6 +7,10 @@
 	<link rel="stylesheet" href="http://static.tumblr.com/4g4xfxh/9z1m67ig9/style.css">
 	<!--[if (gte IE 6)&(lte IE 8)]><script src="http://static.tumblr.com/4g4xfxh/nYhm65wy6/shiv.js"></script><![endif]-->
 
+	<link rel="shortcut icon" href="{Favicon}"/>
+	<link rel="alternate" type="application/rss+xml" title="RSS" href="{RSS}"/>
+	<link rel="apple-touch-icon" href="{PortraitURL-128}"/>
+
 
 	<meta name="Description" content="{MetaDescription}" />
 	<!-- DEFAULT TEXT -->
@@ -15,6 +19,8 @@
 	<meta name="text:LinkedIn URL" content=""/>	
 	<meta name="text:Pinterest Username" content=""/>	
 
+	<style>/*--[ CUSTOM CSS ]----------------*/
+	{CustomCSS}</style>
 </head>
 {block:PermalinkPage}
 	<body class="singular">
@@ -84,7 +90,7 @@
 				{/block:Quote}
 				
 				{block:Photo}
-				<div class="article-photo-feature"><img src="{PhotoURL-500}" width="500" alt="Photo"></div>
+				<div class="article-photo-feature">{LinkOpenTag}<img src="{PhotoURL-500}" width="500" alt="{PhotoAlt}">{LinkCloseTag}</div>
 				{block:Caption}
 				<div class="article-photo-caption">{Caption}</div>
 				{/block:Caption}
@@ -224,7 +230,7 @@
 
 
 <footer class="footer foot">
-	<p class="theme-by">Theme by <a href="http://floate.com.au">Floate</a></p>
+	<p class="theme-by">Designed by <a href="http://floate.com.au">Floate</a> in Melbourne. Just north of the river.</p>
 </footer>
 
 
