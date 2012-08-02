@@ -1,3 +1,136 @@
+function equalHeight($columns, className, media, context){
+	/* ****
+	DESCRIPTION
+		Creates equal height columns for CSS layout
+		Adds <style> to header of document, allowing media type targeting
+
+	INPUT: 
+		* $columns
+			jQuery object of all columns
+			default: NULL/nil
+
+		* className
+			name of class to add to each column (a random number is appended to this value)
+			default: 'equalHeight' 
+
+		* media
+			css media to target
+			default: 'screen, projection, handheld'
+
+		* context
+			css context to add to selector in <style> section
+			eg context='#content' will output #content .equalHeight-xxxx {}
+			default: '' (empty string)
+
+	RETURN: className with random number appendix
+
+	DEPENDENCIES:
+		jQuery
+		SOUPGIANT.base.createStyleRule()
+	**** */
+	if ($columns == null) {
+		//function called incorrectly, exit
+		return null;
+	}
+	$columns = $($columns);
+	if (className == null) {
+		className = 'equalHeight';
+	}
+	if (media == null) {
+		media = 'screen, projection, handheld'; //default
+	}
+	if (context == null) {
+		context = '';
+	} else {
+		context = ' ' + context + ' ';
+	}
+
+	var classRandom = Math.floor(Math.random()*999999),
+		tallestCol = 0,classDeclaration,ie6Declaration;
+	className = className + '-' + classRandom;
+	$columns.each(function (){
+		var $this = $(this);
+		if ($this.height() > tallestCol) {
+			tallestCol = $this.height();
+		}
+		$this.addClass(className);
+	});
+
+	//create css declaration
+	// className = '.' + className;
+	classDeclaration = 'min-height: ' + tallestCol + 'px; ';
+	classDeclaration += '_height: ' + tallestCol + 'px;';
+	createStyleRule(context + ' .' + className, classDeclaration, media);
+
+	return className; //in case it's needed for later manipulation
+}
+
+function createStyleRule(selector, rule, media){
+	/* ****
+	DESCRIPTION
+		Adds <style> to header of document, allowing media type targeting
+
+	INPUT: 
+		* selector
+			css selector
+			default: NULL/nil
+
+		* rule
+			css properties
+			default: NULL/nill
+
+		* media
+			css media to target
+			default: 'screen, projection, handheld'
+
+
+	RETURN: NULL/nil
+
+	DEPENDENCIES: NULL/nil
+
+	CREDIT: http://rule52.com/2008/06/css-rule-page-load/
+
+	changes
+	- added media to passed variables
+
+	**** */
+
+	// create a stylesheet
+
+	if (media == null) {
+		media = 'screen, projection, handheld';
+	}
+
+	var id = 'jsgen-css-' + media.replace(/[^a-zA-Z0-9]+/g,''),
+		headElement = document.getElementsByTagName("head")[0],
+		styleElement = document.getElementById(id);
+
+	if (styleElement == null) {
+		styleElement = document.createElement("style");
+		styleElement.id = id;
+		styleElement.type = "text/css";
+		styleElement.media = media;
+		headElement.appendChild(styleElement);
+	}
+
+
+	if (selector == null || rule == null) {
+		return;
+	}
+
+	if (styleElement.styleSheet) {
+		if (styleElement.styleSheet.cssText == '') {
+			styleElement.styleSheet.cssText = '';
+		}
+		styleElement.styleSheet.cssText += selector + " { " + rule + " }";
+	} 
+	else {
+		styleElement.appendChild(document.createTextNode(selector + " { " + rule + " }"));
+	}
+
+}
+
+
     function linkify_tweet(tweet) {
 		var link_exp = /(^|\s)(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig;
 		tweet = tweet.replace(link_exp, " <a href='$2'>$2</a> ");
@@ -31,11 +164,11 @@ function relative_time(time_value) {
 
 
 function recent_tweets(data) {
-	
+
 	var out;
 	out = '<h2 class="widget-title"><i class="ico ico-tw"></i> Twitter Feed</h2>';
 	out = out + '<div class="widget-body"><ul class="widget-list">';
-	
+
 	for (var i=0;i<data.length;i++) {
 		data[i].text = linkify_tweet(data[i].text);
 		out = out + '<li>';
@@ -47,11 +180,11 @@ function recent_tweets(data) {
 		out = out + '</a>';
 		out = out + '</span></li>';
 	}
-	
+
 	out = out + '</ul></div>';
-	
+
 	document.getElementById("wgttw").innerHTML = out;
-	
+
 }
 /**
  * Plugin: jquery.zRSSFeed
@@ -157,7 +290,7 @@ function recent_tweets(data) {
 					var content = entry.content;
 				}
 
-				
+
 
 				html += content;
 			}
@@ -177,6 +310,7 @@ function recent_tweets(data) {
 			'</div>'
 
 		$(e).html(html);
+		equalHeight('.content,.sidebar');
 
 		//correct href for images so they point to Pinterest
 		$(function() {
@@ -191,6 +325,9 @@ function recent_tweets(data) {
 })(jQuery);
 
 
+
+
+
 $(document).ready(function () {
 	if (typeof pinterestUsername == "string") {
 		$('#wgtpi').rssfeed('http://www.pinterest.com/' + pinterestUsername + '/feed.rss', {
@@ -201,4 +338,9 @@ $(document).ready(function () {
 		});
 	}
 
+
+
+	equalHeight('.content,.sidebar');
+
 });
+

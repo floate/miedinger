@@ -4,7 +4,7 @@
 	<meta charset=UTF-8>
 	<script>(function(H){H.className=H.className.replace(/\bno-js\b/,'js')})(document.documentElement)</script>
 	<title>{block:SearchPage}{lang:Search results for SearchQuery} - {/block:SearchPage}{block:PostTitle}{PostTitle} - {/block:PostTitle}{Title}</title>
-	<link rel="stylesheet" href="http://static.tumblr.com/4g4xfxh/9z1m67ig9/style.css">
+	<link rel="stylesheet" href="http://static.tumblr.com/h1he7ly/uWMm83ube/style-min.css">
 	<!--[if (gte IE 6)&(lte IE 8)]><script src="http://static.tumblr.com/4g4xfxh/nYhm65wy6/shiv.js"></script><![endif]-->
 
 	<link rel="shortcut icon" href="{Favicon}"/>
@@ -12,7 +12,9 @@
 	<link rel="apple-touch-icon" href="{PortraitURL-128}"/>
 
 
-	<meta name="Description" content="{MetaDescription}" />
+	{block:Description}
+		<meta name="Description" content="{MetaDescription}" />
+	{/block:Description}
 	<!-- DEFAULT TEXT -->
 	<meta name="text:About Me URL" content=""/>	
 	<meta name="text:Facebook URL" content=""/>	
@@ -31,15 +33,19 @@
 
 	
 
-<header class="header head">
+<header class="header head {block:Description} l-hasdescription{/block:Description}">
 	<div class="fork">
-		
-		{block:PermalinkPage}
-			<p class="brand fork-left"><a href="/">{Title}</a></p>
-		{/block:PermalinkPage}
-		{block:IndexPage}
-			<h1 class="brand fork-left"><a href="/">{Title}</a></h1>
-		{/block:IndexPage}
+		<div class="fork-left">
+			{block:PermalinkPage}
+				<p class="brand"><a href="/">{Title}</a></p>
+			{/block:PermalinkPage}
+			{block:IndexPage}
+				<h1 class="brand"><a href="/">{Title}</a></h1>
+			{/block:IndexPage}
+			{block:Description}
+				<p class="brand-description">{Description}</p>
+			{/block:Description}
+		</div>
 	
 		<nav class="nav menu fork-right">
 			{block:IfAboutMeURL}<a href="{text:About Me URL}"><i class="ico ico-me"></i></a>{/block:IfAboutMeURL}
@@ -230,7 +236,7 @@
 
 
 <footer class="footer foot">
-	<p class="theme-by">Designed by <a href="http://floate.com.au">Floate</a> in Melbourne. Just north of the river.</p>
+	<p class="theme-by"><a href="http://www.tumblr.com/theme/35514">Miedinger theme</a> designed by <a href="http://floate.com.au">Floate</a> in Melbourne. Just north of the river.</p>
 </footer>
 
 
@@ -247,7 +253,7 @@ var pinterestUsername = "{text:Pinterest Username}";
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
 
 
-	<script src="http://static.tumblr.com/4g4xfxh/ZmFm67ihd/site-min.js" type="text/javascript"></script>
+	<script src="http://static.tumblr.com/h1he7ly/mqQm83u9z/site-min.js" type="text/javascript"></script>
 	{block:Twitter}<script type="text/javascript" src="/tweets.js"></script>{/block:Twitter}
 
 
@@ -270,6 +276,3 @@ var pinterestUsername = "{text:Pinterest Username}";
 
 </body>
 </html>
-
-
-
