@@ -697,7 +697,11 @@ body {
   box-shadow: 0 1px 3px rgba(56, 56, 56, 0.75);
 }
 .article-photo-feature a:hover img {
-  border-color: #b7b1a8;
+  /*	border-color: #b7b1a8;*/
+
+  -webkit-box-shadow: 0 2px 4px rgba(56, 56, 56, 0.95);
+  -moz-box-shadow: 0 2px 4px rgba(56, 56, 56, 0.95);
+  box-shadow: 0 2px 4px rgba(56, 56, 56, 0.95);
 }
 .article-photo-caption {
   background-color: #ddd;
