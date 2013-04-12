@@ -138,28 +138,37 @@ function createStyleRule(selector, rule, media){
 		return tweet.replace(/(^|\s)#(\w+)/g, " $1<a href=\"http://search.twitter.com/search?q=%23$2\">#$2</a> ");
  };
 
-function relative_time(time_value) {
-   var parsed_date = Date.parse(time_value);
+	function relative_time(time_value) {
+		var split_date = time_value.split(" "),
+			the_date = new Date(split_date[1] + " " + split_date[2] + ", " + split_date[5] + " " + split_date[3] + " UTC"),
+			now = new Date(),
+			delta = (now.getTime() - the_date.getTime()) / 1000,
+			monthNames = [ "Jan", "Feb", "Mar", "Apr", "May", "Jun",
+				"Jul", "Aug", "Sep", "Oct", "Nov", "Dec" ];
 
-   var relative_to = (arguments.length > 1) ? arguments[1] : new Date();
-   var delta = parseInt((relative_to.getTime() - parsed_date) / 1000);
-
-   if(delta < 60) {
-       return 'less than a minute ago';
-   } else if(delta < 120) {
-       return 'about a minute ago';
-   } else if(delta < (45*60)) {
-       return (parseInt(delta / 60)).toString() + ' minutes ago';
-   } else if(delta < (90*60)) {
-           return 'about an hour ago';
-       } else if(delta < (24*60*60)) {
-       return 'about ' + (parseInt(delta / 3600)).toString() + ' hours ago';
-   } else if(delta < (48*60*60)) {
-       return '1 day ago';
-   } else {
-       return (parseInt(delta / 86400)).toString() + ' days ago';
-   }
-}
+		if(delta < 60) {
+			return 'less than a minute ago';
+		}
+		else if(delta < 120) {
+			return 'about a minute ago';
+		}
+		else if(delta < (45*60)) {
+			return (parseInt(delta / 60)).toString() + ' minutes ago';
+		}
+		else if(delta < (90*60)) {
+			return 'about an hour ago';
+		}
+		else if(delta < (24*60*60)) {
+			return 'about ' + (parseInt(delta / 3600)).toString() + ' hours ago';
+		}
+		else if(delta < (48*60*60)) {
+			return '1 day ago';
+		}
+		else {
+			return the_date.getDate() + ' ' + monthNames[the_date.getMonth()];
+			// return (parseInt(delta / 86400)).toString() + ' days ago';
+		}
+	}
 
 
 
